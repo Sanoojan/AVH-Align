@@ -1,0 +1,2 @@
+eval_new_time_v0.py -- Fake segment proposals for all videos and evaluating
+eval_new_time_v1.py -- Filtering real videos and limited fake proposals

@@ -71,7 +71,7 @@ def train(config):
 
 
 def test(config):
-    test_dl = load_data(config=config["data_info"], test=True)
+    test_dl = load_data(config=config["data_info"], test=True) 
     model = AVH_Sup.load_from_checkpoint(config["ckpt_path"])
 
     model.to("cuda")

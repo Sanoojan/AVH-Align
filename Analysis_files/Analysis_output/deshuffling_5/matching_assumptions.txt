@@ -1,0 +1,18 @@
+Audio/visual matching zero-shot assumptions
+===========================================
+1. Zero-shot: no classifier, threshold, or calibration is learned from labels; labels are used only for reporting metrics.
+2. Audio and visual feature arrays are temporally aligned before any artificial shuffle is applied.
+3. A genuine frame should recover its own or a nearby visual frame after visual frames are shuffled and rematched to audio.
+4. A fake visual/audio region is harder to recover, so larger recovery displacement and lower audio-visual cosine similarity imply a higher fake score.
+5. Multiple deshuffling rounds are independent random visual permutations; the final frame score is their average.
+6. The video-level score is the mean of the highest-scoring frame fraction, assuming fake evidence may occupy only part of a video.
+7. Temporal AP/AR proposals interpret feature frames at 25 fps, matching eval_new_time.py.
+
+Run settings
+------------
+deshuffle_rounds=5
+video_top_fraction=0.1
+max_frames=0 (0 means full video)
+max_real_videos=0 (0 means all)
+max_fake_videos=0 (0 means all)
+skip_segment_metrics=False

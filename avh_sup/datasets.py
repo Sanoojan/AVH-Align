@@ -177,7 +177,8 @@ class FakeAVCeleb_Dataset(Dataset):
 def load_data(config, test=False):
     if test:
         if config["name"] == "AV1M":
-            test_ds = AV1M_test_dataset(config)
+            # test_ds = AV1M_test_dataset(config)
+            test_ds=AV1M_trainval_dataset(config, split="test")
         elif config["name"] == "AVLips":
             test_ds = AVLips_Dataset(config)
         elif config["name"] == "FAVC":
@@ -192,7 +193,7 @@ def load_data(config, test=False):
     else:
         if config["name"] == "AV1M":
             train_ds = AV1M_trainval_dataset(config, split="train")
-            val_ds = AV1M_trainval_dataset(config, split="val")
+            val_ds = AV1M_trainval_dataset(config, split="train") # Tried the split from same train data for now
         elif config["name"] == "FAVC":
             train_ds = FakeAVCeleb_Dataset(config, split="train")
             val_ds = FakeAVCeleb_Dataset(config, split="val")

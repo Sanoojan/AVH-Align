@@ -12,15 +12,15 @@ def get_args():
                         help='Temporal window size (left and right distance from the central frame)')
     
     # Training configuration
-    parser.add_argument('--batch_size', type=int, default=1024,
+    parser.add_argument('--batch_size', type=int, default=24,
                         help='Batch size for training')
-    parser.add_argument('--epochs', type=int, default=500,
+    parser.add_argument('--epochs', type=int, default=200,
                         help='Number of training epochs')
-    parser.add_argument('--early_stopping_patience', type=int, default=10,
+    parser.add_argument('--early_stopping_patience', type=int, default=15,
                         help='Stop after this many epochs without improvement')
     parser.add_argument('--scheduler_patience', type=int, default=5,
                         help='Patience for learning rate scheduler')
-    parser.add_argument('--learning_rate', type=float, default=1e-5,
+    parser.add_argument('--learning_rate', type=float, default=6e-5,
                         help='Initial learning rate')
     parser.add_argument('--penalty_coefficient', type=float, default=0.1,
                         help='Coefficient for the output magnitude regularizer loss term')
@@ -39,9 +39,22 @@ def get_args():
     # Data paths
     parser.add_argument('--data_root_path', type=str, default="av1m_features/",
                         help='Root directory for feature data')
+    parser.add_argument('--data_val_root_path', type=str, default="av1m_features/train",
+                        help='Directory for training feature data')
     parser.add_argument('--metadata_root_path',  type=str, default="av1m_metadata/",
                         help='Metadata path directory for feature data')
-    
+    parser.add_argument('--T_train', type=int, default=500,
+                        help='Number of frames to use for training (starting from the first frame)')
+    parser.add_argument('--num_workers', type=int, default=4,
+                        help='Number of worker processes for data loading')
+    parser.add_argument('--feature_dim', type=int, default=1024,
+                        help='Dimensionality of the input features')
+    parser.add_argument('--hidden_dim', type=int, default=768,
+                        help='Dimensionality of the hidden layers in the model')
+    parser.add_argument('--num_layers', type=int, default=4,
+                        help='Number of transformer encoder layers')
+    parser.add_argument('--nhead', type=int, default=12,
+                        help='Number of attention heads in the transformer encoder')
     args = parser.parse_args()
 
     return args

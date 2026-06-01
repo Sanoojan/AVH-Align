@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=7 python train_test.py --test --config=/egr/research-sprintai/baliahsa/projects/AVH-Align/avh_sup/configs/test_config.yaml > /egr/research-sprintai/baliahsa/projects/AVH-Align/logs/Evals/avh_orig_sup_train_test-Trimmed.log 2>&1 &

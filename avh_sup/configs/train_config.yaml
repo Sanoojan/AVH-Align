@@ -1,7 +1,7 @@
 data_info:
-  name: ""  # Choose the dataset used: FAVC (FakeAVCeleb), AV1M (AV-Deepfake1M)
-  root_path: ""  # Data root path 
-  csv_root_path: ""  # Path to the folder containing split csv's
+  name: "AV1M"  # Choose the dataset used: FAVC (FakeAVCeleb), AV1M (AV-Deepfake1M)
+  root_path: "/egr/research-sprintai/baliahsa/projects/AVH-Align/Features/AV1M"  # Data root path 
+  csv_root_path: "/egr/research-sprintai/baliahsa/projects/AVH-Align/avh_sup/csv_metadata/av1m"  # Path to the folder containing split csv's
   apply_l2: True  # Apply l2 normalization of input features (always used in our experiments)
 
 model_hparams:

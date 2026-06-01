@@ -1,11 +1,11 @@
 data_info:
-  name: ""  # Choose the dataset used: FAVC (FakeAVCeleb), AV1M (AV-Deepfake1M), AVLips
-  root_path: ""  # Data root path 
-  csv_root_path: ""  # Path to the folder containing split csv's
+  name: "AV1M"  # Choose the dataset used: FAVC (FakeAVCeleb), AV1M (AV-Deepfake1M), AVLips
+  root_path: "/egr/research-sprintai/baliahsa/projects/AVH-Align/Features/AV1M-Trimmed"  # Data root path 
+  csv_root_path: "/egr/research-sprintai/baliahsa/projects/AVH-Align/avh_sup/csv_metadata/av1m"  # Path to the folder containing split csv's
   apply_l2: True  # Apply l2 normalization of input features (always used in our experiments)
 
-ckpt_path: ""  # Path to the model ckpt
+ckpt_path: "/egr/research-sprintai/baliahsa/projects/AVH-Align/avh_sup/outputs/ckpts/model-epoch=41.ckpt"  # Path to the model ckpt
 
-output_path: ""  # Path to output folder
+output_path: "/egr/research-sprintai/baliahsa/projects/AVH-Align/avh_sup/outputs/baseline_out-Trimmed"  # Path to output folder
 
 seed: 43

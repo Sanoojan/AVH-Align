@@ -79,7 +79,7 @@ def main():
     )
     val_dataset = FeatureDataset(
         os.path.join(args.metadata_root_path, "val_metadata.csv"), 
-        os.path.join(args.data_root_path, "train"),
+        os.path.join(args.data_root_path, "val"),
         tau=args.tau,
     )
         

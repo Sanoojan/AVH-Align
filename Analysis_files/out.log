@@ -1,0 +1,125 @@
+
+STEP 1: DATA SUMMARY
+====================
+Videos: 8930
+Frame length quantiles: {'p10': 130.0, 'p25': 146.0, 'p50': 185.0, 'p75': 262.0, 'p90': 383.0}
+Total aligned frames: 2021020
+Video outputs: shape=(8930,), min=0.4162, max=8.9949, mean=3.7371
+Video labels: shape=(8930,), positive_rate=0.7496
+
+STEP 2: GT SEGMENT STATISTICS
+=============================
+Positive videos: 6694
+GT segment count distribution: {0: 2236, 1: 4824, 2: 1592, 3: 257, 4: 21}
+Max GT segments in one video: 4
+GT segment length quantiles: {'p10': 4.0, 'p25': 6.0, 'p50': 8.0, 'p75': 11.0, 'p90': 14.0}
+Positive frame-rate quantiles: {'p10': 0.0, 'p25': 0.0, 'p50': 0.038461538461538464, 'p75': 0.05801651845458217, 'p90': 0.08}
+
+STEP 3: SCORE CALIBRATION
+=========================
+Frame positive rate: 0.0383
+Positive score quantiles: {'p50': 0.705324798822403, 'p75': 0.8847256302833557, 'p90': 0.946739548444748, 'p95': 0.9669548094272614, 'p99': 0.9872880429029465}
+Negative score quantiles: {'p50': 0.019039430655539036, 'p75': 0.04589055944234133, 'p90': 0.11632280424237254, 'p95': 0.21876147165894488, 'p99': 0.6434256678819644}
+
+STEP 4: BASELINE PROPOSAL METRICS
+=================================
+name,ap50,ap75,ap90,ap95,ar100,ar5,mean_proposals,zero_proposal_pct
+baseline_eval_style_unique_thresholds,0.0531,0.0267,0.0043,0.0020,0.6012,0.2466,99.9998,0.0000
+baseline_saved_debug_proposals,0.0531,0.0267,0.0043,0.0020,0.6012,0.2466,99.9998,0.0000
+
+STEP 5: STRATEGY SWEEP RESULTS
+==============================
+[001/049] threshold_s1_t0.2_merge5_min5_expand3_top3_maxconf AP@0.5=0.0776 AP@0.75=0.0004 mean_props=1.36
+[002/049] threshold_s1_t0.3_merge5_min5_expand3_top3_maxconf AP@0.5=0.1073 AP@0.75=0.0008 mean_props=1.08
+[003/049] threshold_s1_t0.4_merge5_min5_expand3_top3_maxconf AP@0.5=0.1325 AP@0.75=0.0012 mean_props=0.93
+[004/049] threshold_s1_t0.5_merge5_min5_expand3_top3_maxconf AP@0.5=0.1520 AP@0.75=0.0014 mean_props=0.82
+[005/049] threshold_s1_t0.6_merge5_min5_expand3_top3_maxconf AP@0.5=0.1639 AP@0.75=0.0019 mean_props=0.72
+[006/049] threshold_s3_t0.2_merge5_min5_expand3_top3_maxconf AP@0.5=0.0657 AP@0.75=0.0004 mean_props=1.23
+[007/049] threshold_s3_t0.3_merge5_min5_expand3_top3_maxconf AP@0.5=0.1007 AP@0.75=0.0007 mean_props=0.99
+[008/049] threshold_s3_t0.4_merge5_min5_expand3_top3_maxconf AP@0.5=0.1282 AP@0.75=0.0010 mean_props=0.86
+[009/049] threshold_s3_t0.5_merge5_min5_expand3_top3_maxconf AP@0.5=0.1515 AP@0.75=0.0015 mean_props=0.75
+[010/049] threshold_s3_t0.6_merge5_min5_expand3_top3_maxconf AP@0.5=0.1727 AP@0.75=0.0024 mean_props=0.64
+[011/049] threshold_s5_t0.2_merge5_min5_expand3_top3_maxconf AP@0.5=0.0520 AP@0.75=0.0002 mean_props=1.25
+[012/049] threshold_s5_t0.3_merge5_min5_expand3_top3_maxconf AP@0.5=0.0847 AP@0.75=0.0007 mean_props=1.00
+[013/049] threshold_s5_t0.4_merge5_min5_expand3_top3_maxconf AP@0.5=0.1201 AP@0.75=0.0011 mean_props=0.85
+[014/049] threshold_s5_t0.5_merge5_min5_expand3_top3_maxconf AP@0.5=0.1529 AP@0.75=0.0019 mean_props=0.72
+[015/049] threshold_s5_t0.6_merge5_min5_expand3_top3_maxconf AP@0.5=0.1842 AP@0.75=0.0038 mean_props=0.60
+[016/049] threshold_s9_t0.2_merge5_min5_expand3_top3_maxconf AP@0.5=0.0309 AP@0.75=0.0001 mean_props=1.20
+[017/049] threshold_s9_t0.3_merge5_min5_expand3_top3_maxconf AP@0.5=0.0613 AP@0.75=0.0005 mean_props=0.95
+[018/049] threshold_s9_t0.4_merge5_min5_expand3_top3_maxconf AP@0.5=0.1107 AP@0.75=0.0012 mean_props=0.80
+[019/049] threshold_s9_t0.5_merge5_min5_expand3_top3_maxconf AP@0.5=0.1671 AP@0.75=0.0034 mean_props=0.66
+[020/049] threshold_s9_t0.6_merge5_min5_expand3_top3_maxconf AP@0.5=0.2143 AP@0.75=0.0100 mean_props=0.50
+[021/049] threshold_s15_t0.2_merge5_min5_expand3_top3_maxconf AP@0.5=0.0138 AP@0.75=0.0001 mean_props=1.17
+[022/049] threshold_s15_t0.3_merge5_min5_expand3_top3_maxconf AP@0.5=0.0449 AP@0.75=0.0004 mean_props=0.85
+[023/049] threshold_s15_t0.4_merge5_min5_expand3_top3_maxconf AP@0.5=0.0963 AP@0.75=0.0017 mean_props=0.66
+[024/049] threshold_s15_t0.5_merge5_min5_expand3_top3_maxconf AP@0.5=0.1729 AP@0.75=0.0080 mean_props=0.48
+[025/049] threshold_s15_t0.6_merge5_min5_expand3_top3_maxconf AP@0.5=0.1878 AP@0.75=0.0277 mean_props=0.30
+[026/049] top_window_s1_mean_w4-6-8-10-12-16-24-32_top3 AP@0.5=0.1403 AP@0.75=0.0276 mean_props=3.00
+[027/049] top_window_s1_mean_w6-8-10-12-16_top3 AP@0.5=0.2208 AP@0.75=0.0447 mean_props=3.00
+[028/049] top_window_s1_mean_w8-12-16-24-32_top3 AP@0.5=0.3138 AP@0.75=0.0717 mean_props=3.00
+[029/049] top_window_s1_top3_w4-6-8-10-12-16-24-32_top3 AP@0.5=0.1668 AP@0.75=0.0411 mean_props=3.00
+[030/049] top_window_s1_top3_w6-8-10-12-16_top3 AP@0.5=0.1640 AP@0.75=0.0361 mean_props=3.00
+[031/049] top_window_s1_top3_w8-12-16-24-32_top3 AP@0.5=0.1647 AP@0.75=0.0370 mean_props=3.00
+[032/049] top_window_s3_mean_w4-6-8-10-12-16-24-32_top3 AP@0.5=0.1468 AP@0.75=0.0270 mean_props=3.00
+[033/049] top_window_s3_mean_w6-8-10-12-16_top3 AP@0.5=0.2068 AP@0.75=0.0379 mean_props=3.00
+[034/049] top_window_s3_mean_w8-12-16-24-32_top3 AP@0.5=0.3053 AP@0.75=0.0671 mean_props=3.00
+[035/049] top_window_s3_top3_w4-6-8-10-12-16-24-32_top3 AP@0.5=0.1618 AP@0.75=0.0347 mean_props=3.00
+[036/049] top_window_s3_top3_w6-8-10-12-16_top3 AP@0.5=0.1525 AP@0.75=0.0306 mean_props=3.00
+[037/049] top_window_s3_top3_w8-12-16-24-32_top3 AP@0.5=0.1615 AP@0.75=0.0355 mean_props=3.00
+[038/049] top_window_s5_mean_w4-6-8-10-12-16-24-32_top3 AP@0.5=0.1490 AP@0.75=0.0251 mean_props=3.00
+[039/049] top_window_s5_mean_w6-8-10-12-16_top3 AP@0.5=0.1898 AP@0.75=0.0303 mean_props=3.00
+[040/049] top_window_s5_mean_w8-12-16-24-32_top3 AP@0.5=0.2873 AP@0.75=0.0572 mean_props=3.00
+[041/049] top_window_s5_top3_w4-6-8-10-12-16-24-32_top3 AP@0.5=0.1594 AP@0.75=0.0269 mean_props=3.00
+[042/049] top_window_s5_top3_w6-8-10-12-16_top3 AP@0.5=0.1518 AP@0.75=0.0261 mean_props=3.00
+[043/049] top_window_s5_top3_w8-12-16-24-32_top3 AP@0.5=0.1625 AP@0.75=0.0332 mean_props=3.00
+[044/049] top_window_s9_mean_w4-6-8-10-12-16-24-32_top3 AP@0.5=0.1413 AP@0.75=0.0221 mean_props=3.00
+[045/049] top_window_s9_mean_w6-8-10-12-16_top3 AP@0.5=0.1566 AP@0.75=0.0236 mean_props=3.00
+[046/049] top_window_s9_mean_w8-12-16-24-32_top3 AP@0.5=0.2460 AP@0.75=0.0426 mean_props=3.00
+[047/049] top_window_s9_top3_w4-6-8-10-12-16-24-32_top3 AP@0.5=0.1547 AP@0.75=0.0183 mean_props=3.00
+[048/049] top_window_s9_top3_w6-8-10-12-16_top3 AP@0.5=0.1536 AP@0.75=0.0226 mean_props=3.00
+[049/049] top_window_s9_top3_w8-12-16-24-32_top3 AP@0.5=0.1675 AP@0.75=0.0296 mean_props=3.00
+
+STEP 6A: ORACLE DIAGNOSTIC
+==========================
+name,ap50,ap75,ap90,ap95,ar100,ar5,mean_proposals,zero_proposal_pct
+oracle_gt_boundaries_top3,0.9975,0.9975,0.9975,0.9975,0.9976,0.9976,0.9901,25.0392
+
+STEP 6: BEST STRATEGY DETAILS
+=============================
+Rank metric: ap50
+name,ap50,ap75,ap90,ap95,ar100,ar5,mean_proposals,zero_proposal_pct
+top_window_s1_mean_w8-12-16-24-32_top3,0.3138,0.0717,0.0017,0.0009,0.3696,0.3696,3.0000,0.0000
+top_window_s3_mean_w8-12-16-24-32_top3,0.3053,0.0671,0.0010,0.0005,0.3608,0.3608,3.0000,0.0000
+top_window_s5_mean_w8-12-16-24-32_top3,0.2873,0.0572,0.0007,0.0004,0.3496,0.3496,3.0000,0.0000
+top_window_s9_mean_w8-12-16-24-32_top3,0.2460,0.0426,0.0004,0.0003,0.3290,0.3290,3.0000,0.0000
+top_window_s1_mean_w6-8-10-12-16_top3,0.2208,0.0447,0.0025,0.0014,0.3404,0.3404,3.0000,0.0000
+threshold_s9_t0.6_merge5_min5_expand3_top3_maxconf,0.2143,0.0100,0.0002,0.0000,0.1197,0.1197,0.5008,56.9765
+top_window_s3_mean_w6-8-10-12-16_top3,0.2068,0.0379,0.0016,0.0009,0.3248,0.3248,3.0000,0.0000
+top_window_s5_mean_w6-8-10-12-16_top3,0.1898,0.0303,0.0011,0.0008,0.3072,0.3072,3.0000,0.0000
+threshold_s15_t0.6_merge5_min5_expand3_top3_maxconf,0.1878,0.0277,0.0009,0.0001,0.1059,0.1059,0.3026,72.3292
+threshold_s5_t0.6_merge5_min5_expand3_top3_maxconf,0.1842,0.0038,0.0000,0.0000,0.1068,0.1068,0.5961,50.4591
+threshold_s15_t0.5_merge5_min5_expand3_top3_maxconf,0.1729,0.0080,0.0002,0.0000,0.1017,0.1017,0.4833,58.0291
+threshold_s3_t0.6_merge5_min5_expand3_top3_maxconf,0.1727,0.0024,0.0000,0.0000,0.1017,0.1017,0.6380,47.7828
+top_window_s9_top3_w8-12-16-24-32_top3,0.1675,0.0296,0.0003,0.0002,0.2952,0.2952,3.0000,0.0000
+threshold_s9_t0.5_merge5_min5_expand3_top3_maxconf,0.1671,0.0034,0.0001,0.0000,0.1061,0.1061,0.6639,46.0134
+top_window_s1_top3_w4-6-8-10-12-16-24-32_top3,0.1668,0.0411,0.0019,0.0009,0.3262,0.3262,3.0000,0.0000
+
+Best strategy: top_window_s1_mean_w8-12-16-24-32_top3
+Best metrics: AP@0.5=0.3138, AP@0.75=0.0717, AP@0.9=0.0017, AP@0.95=0.0009
+
+STEP 7: LOW-IOU FAILURE DIAGNOSTICS
+===================================
+Best strategy: top_window_s1_mean_w8-12-16-24-32_top3
+idx,best_iou,length,gt_segments,pred_segments,max_score
+15,0.0000,182,[(119, 124)],[(144, 152, 0.6745429709553719), (141, 149, 0.6478535234928131), (101, 109, 0.5996890775859356)],0.8092
+25,0.0000,179,[(53, 57)],[(80, 88, 0.28534788079559803), (83, 95, 0.2593421953109403), (83, 107, 0.18256767354129502)],0.6222
+26,0.0000,140,[(5, 14)],[(132, 140, 0.16591464541852474), (129, 137, 0.16196997789666057), (124, 140, 0.12979572545737028)],0.3969
+47,0.0000,140,[(14, 20)],[(112, 120, 0.22039984073489904), (109, 117, 0.16061169258318841), (0, 8, 0.13837814843282104)],0.7508
+99,0.0000,204,[(172, 179)],[(0, 8, 0.17646802635863423), (48, 56, 0.15451658749952912), (45, 53, 0.1378010594053194)],0.4937
+139,0.0000,183,[(16, 21)],[(157, 165, 0.10062770324293524), (154, 162, 0.09963586472440511), (159, 171, 0.08939224334123234)],0.3681
+142,0.0000,151,[(24, 26)],[(0, 8, 0.05798133823554963), (143, 151, 0.05189692392013967), (61, 69, 0.034164026263169944)],0.3749
+167,0.0000,182,[(43, 56)],[(15, 23, 0.33320075273513794), (18, 26, 0.2551806177943945), (14, 30, 0.20271810854319483)],0.7063
+171,0.0000,134,[(9, 17)],[(111, 119, 0.25486308336257935), (108, 116, 0.21571670938283205), (114, 122, 0.18149600049946457)],0.3954
+228,0.0000,194,[(55, 65)],[(0, 8, 0.08974865649361163), (33, 41, 0.08314260258339345), (30, 38, 0.07573385606519878)],0.5903
+
+Saved strategy CSV: /egr/research-sprintai/baliahsa/projects/AVH-Align/Analysis_files/prediction_strategy_results.csv

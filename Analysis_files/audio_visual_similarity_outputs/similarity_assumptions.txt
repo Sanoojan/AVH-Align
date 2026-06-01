@@ -1,0 +1,18 @@
+Audio/visual cosine-similarity zero-shot assumptions
+=====================================================
+1. Zero-shot: no learned model, classifier, checkpoint, or calibration is used.
+2. Low aligned audio/visual cosine similarity indicates likely fake content.
+3. Audio and visual arrays in each feature .npz are already frame-aligned.
+4. Feature-frame labels in *_labels.npz use the same temporal resolution as audio/visual features.
+5. Temporal AP/AR proposals interpret feature frames at 25 fps, matching eval_new_time.py.
+6. Video-level scoring emphasizes suspicious spans by averaging the highest-scoring frame fraction.
+
+Run settings
+------------
+metadata=/egr/research-sprintai/baliahsa/projects/AVH-Align/av1m_metadata/test_metadata_cleaned.csv
+features_root=/egr/research-sprintai/baliahsa/projects/AVH-Align/Features/AV1M-Trimmed/test
+max_videos=0 (0 means all)
+max_frames=0 (0 means all aligned frames)
+video_score_aggregation=topk_mean
+video_top_fraction=0.1
+skip_segment_metrics=False

@@ -1,0 +1,27 @@
+{
+    "files.exclude": {
+        // "data": true,
+        // "Features": true
+    },
+
+    "files.watcherExclude": {
+        "data/**": true,
+        "Features/**": true
+    },
+
+    "search.exclude": {
+        "data/**": true,
+        "Features/**": true
+    },
+
+    "python.languageServer": "Pylance",
+    "python.analysis.indexing": false,
+    "python.analysis.autoImportCompletions": false,
+
+    "python.analysis.exclude": [
+        "data",
+        "Features"
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
+}

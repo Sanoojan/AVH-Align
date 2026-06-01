@@ -1,0 +1,89 @@
+# run:
+#   name: Synth_supervised_A_M_SimpleTemporalFusion_weight_20_0.1_0.1
+
+# seed: 42
+
+# wandb:
+#   enabled: true
+#   project: AV_DF
+#   entity: null
+#   group: null
+#   tags:
+#     - supervised
+#     - avh-align
+#   mode: online
+#   watch_model: true
+#   watch_log: gradients
+#   watch_log_freq: 100
+
+# training:
+#   device: cuda
+#   epochs: 200
+#   early_stopping_patience: 15
+#   use_tqdm: false
+
+# checkpoint:
+#   save_path: checkpoints/
+#   monitor: val/video/auc
+
+# scheduler:
+#   mode: max
+#   factor: 0.5
+#   patience: 5
+
+# optimizer:
+#   name: AdamW
+#   learning_rate: 6.0e-5
+#   weight_decay: 0.0
+
+# loss:
+#   frame_pos_weight: 20.0
+#   frame_bce_weight: 1.0
+#   video_bce_weight: 0.1
+#   class_std_weight: 0.1
+
+# metrics:
+#   frame_confidence_threshold: 0.85
+#   target_fprs:
+#     - 0.05
+#     - 0.10
+#   iou_thresholds:
+#     - 0.5
+#     - 0.75
+#     - 0.95
+
+# loader:
+#   batch_size: 24
+#   num_workers: 4
+#   pin_memory: true
+
+data:
+  data_root_path: Features/AV1M 
+  data_val_root_path: Features/AV1M-Trimmed
+  metadata_root_path: av1m_metadata/
+  train_split: train
+  val_split: test
+  train_metadata_file: train_metadata_supervised.csv
+  val_metadata_file: test_metadata_supervised.csv
+  T_train: 500
+  debug: false
+
+checkpoint:
+  save_path: ckpt/auvire/reproduce_small_subset_2/
+  monitor: val/ap
+
+
+# model:
+#   name: SimpleTemporalFusionAV_only
+#   params:
+#     input_dim: 1024
+#     hidden_dim: 768
+
+# Alternative model params if model.name is TemporalFusionModel:
+# model:
+#   name: TemporalFusionModel
+#   params:
+#     input_dim: 1024
+#     hidden_dim: 768
+#     num_layers: 4
+#     nhead: 12

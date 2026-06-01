@@ -1,0 +1,121 @@
+run:
+  name: auvire_avdeepfake1m_hard_synth_supervised
+
+seed: 0
+
+wandb:
+  enabled: true
+  project: AV_DF
+  entity: null
+  group: null
+  tags:
+    - supervised
+    - auvire
+    - avdeepfake1m
+  mode: online
+  watch_model: true
+  watch_log: gradients
+  watch_log_freq: 100
+
+training:
+  device: cuda
+  epochs: 100
+  early_stopping_patience: 10
+  use_tqdm: false
+
+checkpoint:
+  save_path: checkpoints/
+  monitor: val/frame/ap
+
+scheduler:
+  mode: max
+  factor: 0.5
+  patience: 7
+
+optimizer:
+  name: Adam
+  learning_rate: 1.0e-3
+  weight_decay: 0.0
+
+loss:
+  frame_pos_weight: 20.0
+  frame_bce_weight: 1.0
+  video_bce_weight: 0.1
+  class_std_weight: 0.1
+  boundary_bce_weight: 0.0
+  boundary_offset_weight: 0.0
+  boundary_pos_weight: 1.0
+  boundary_target_radius: 2
+
+metrics:
+  test_style_segment_metrics: true
+  test_style_metrics_device: cuda
+  frame_confidence_threshold: 0.85
+  target_fprs:
+    - 0.05
+    - 0.10
+  iou_thresholds:
+    - 0.5
+    - 0.75
+    - 0.95
+
+loader:
+  batch_size: 64
+  num_workers: 4
+  pin_memory: true
+
+data:
+  data_root_path: Features/AV1M
+  data_val_root_path: Features/AV1M-Trimmed
+  metadata_root_path: av1m_metadata/
+  train_split: train
+  val_split: test
+  train_metadata_file: train_metadata_with_hard_synth_fake_segments.csv
+  val_metadata_file: test_metadata_supervised.csv
+  T_train: 512
+  debug: false
+  synthesize_at_feature: false
+  synthesize_prob: 0.5
+  synthstyle: hard
+  hard_min_start_deviation: 10
+  hard_max_start_deviation: 30
+  max_fake_segment_length: 10
+  num_max_synth_segments_per_video: 3
+  synth_modalities: random
+
+model:
+  name: AuvireAVDeepfake1MLocalizer
+  params:
+    input_dim: 1024
+    auvire_dim: 768
+    max_length: 512
+    d_model: 128
+    win_size: 15
+    num_heads: 8
+    operation: subtraction
+    reconstruction:
+      nlayers:
+        pre: 2
+        downsample: 1
+        upsample: 1
+        post: 2
+      modality:
+        - av
+        - aa
+        - vv
+    encoder:
+      nlayers:
+        retain: 1
+        downsample: 1
+      fpn: true
+    conv:
+      use_ln: true
+      use_rl: true
+      use_do: false
+    dropout:
+      main: 0.1
+      head: 0.5
+    model_type:
+      reconstruction: cnn
+      encoder: cnn
+    return_aux: true
